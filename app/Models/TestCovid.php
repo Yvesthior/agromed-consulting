@@ -21,10 +21,10 @@ class TestCovid extends Model
     ];
 
     public const STATUT_SELECT = [
-        'true'   => 'Effectué',
-        'false'  => 'Reporté',
-        'falsy'  => 'Annulé',
-        'staged' => 'A venir',
+        'Effectue' => 'Effectué',
+        'Reporte'  => 'Reporté',
+        'Annule'   => 'Annulé',
+        'A venir'  => 'A venir',
     ];
 
     public $table = 'test_covids';
@@ -58,12 +58,6 @@ class TestCovid extends Model
         'updated_at',
         'deleted_at',
     ];
-
-    public static function boot()
-    {
-        parent::boot();
-        TestCovid::observe(new \App\Observers\TestCovidActionObserver());
-    }
 
     public function getDateRendezVousAttribute($value)
     {
