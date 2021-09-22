@@ -31,7 +31,7 @@ Route::post('/rdv', function (Request $request) {
     $data->destination = $request['destination'];
     $data->heure_voyage = $request['heure_voyage'];
     $data->message = $request['message'];
-    $data->statut = $request['statut'];
+    $data->statut = "A Venir";
 
     $data->save();
     

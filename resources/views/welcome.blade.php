@@ -1,197 +1,195 @@
 <!DOCTYPE html>
-
-@if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            
-
-<html style="font-size: 16px;" lang="fr-SN" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html style="font-size: 16px;" lang="fr-SN">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Votre Test PCR à Domicile., Avoid close contact, Cover your mouth, Clean your hands">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Agromed Consulting</title>
+    <title>Accueil</title>
+    <style>
+        .u-section-1-1 {
+            background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("{{ asset('images/covid-19-test-rectal-anal.jpg') }}");
+            background-position: 19.74% 50%;
+        }
+        .u-section-1-2 {
+        background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("{{ asset('images/covid-19-test-sueur.jpg') }}");
+        background-position: 22.31% 50%;
+        }.u-section-1-3 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(" {{ asset('images/ADN-et-Covid.jpg') }} ");
+  background-position: 76.43% 50%;
+}.u-section-4 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(" {{ asset('images/753c8d88db02b55f1c51ff42bf8c54405303b273d720b5208022bf47431f57cbf52b2bf5864126d6565ffd571c0a7cb31f10db47cae7d0886c58a5_1280.jpg') }} ");
+  background-position: 100% 52.18%;
+  background-size: 130%;
+}
 
+    </style>
 
     <link rel="stylesheet" href="{{ asset('css/nicepage.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('css/Accueil.css') }}" media="screen">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
-    {{-- <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" /> --}}
-    {{-- <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet" /> --}}
-    <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/AdminLTE.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/skins/_all-skins.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+    {{-- @yield('styles') --}}
 
-
-@yield('styles')
-   
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i">
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/js/adminlte.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/dataTables.bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.flash.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-    <script class="u-script" type="text/javascript" src="{{ asset('js/jquery.js') }}" defer=""></script>
+  <script class="u-script" type="text/javascript" src="{{ asset('js/jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ asset('js/nicepage.js') }}" defer=""></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    @yield('scripts')
+    
+    {{-- @yield('scripts') --}}
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    
+    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "Agromed Consulting",
-		"logo": "images/logo1.PNG"
+		"logo": "images/logo2-removebg-preview.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Accueil">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body"
-  ><header class="u-clearfix u-header u-sticky u-sticky-1e50 u-white u-header" id="sec-df5d"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="https://agromedconsulting.com" class="u-image u-logo u-image-1" data-image-width="416" data-image-height="102">
-          <img src="images/logo1.PNG" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-position="menu">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
-            <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+  <body class="u-body">
+    <header class="u-clearfix u-gradient u-header u-sticky u-sticky-1e50 u-header" id="sec-df5d"><a href="/" class="u-image u-logo u-image-1" data-image-width="413" data-image-height="92">
+        <img src="images/logo2-removebg-preview.png" class="u-logo-image u-logo-image-1">
+      </a><nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-position="menu">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+          <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
 </symbol>
 </defs></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Accueil.html" style="padding: 10px 0px;">Accueil</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Accueil.html#carousel_8619" data-page-id="79523360" style="padding: 10px 0px;">A Propos du Test PCR</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90" href="Accueil.html#carousel_266d" data-page-id="79523360" style="padding: 10px 0px;">Prendre Un Rendez Vous</a>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-white u-nav-link u-text-active-palette-1-base u-text-hover-custom-color-2 u-text-white" href="/" style="padding: 10px 0px;">Accueil</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-white u-nav-link u-text-active-palette-1-base u-text-hover-custom-color-2 u-text-white" href="Accueil.html#carousel_8619" data-page-id="79523360" style="padding: 10px 0px;">A Propos du Test PCR</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-white u-nav-link u-text-active-palette-1-base u-text-hover-custom-color-2 u-text-white" href="Accueil.html#sec-b552" data-page-id="79523360" style="padding: 10px 0px;">Prendre Un Rendez Vous</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-white u-nav-link u-text-active-palette-1-base u-text-hover-custom-color-2 u-text-white" href="Accueil.html#sec-b552" data-page-id="79523360" style="padding: 10px 0px;">Nous Contacter</a>
 </li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html" style="padding: 10px 20px;">Accueil</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html#carousel_8619" data-page-id="79523360" style="padding: 10px 20px;">A Propos du Test PCR</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html#carousel_266d" data-page-id="79523360" style="padding: 10px 20px;">Prendre Un Rendez Vous</a>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html" style="padding: 10px 0px;">Accueil</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html#carousel_8619" data-page-id="79523360" style="padding: 10px 0px;">A Propos du Test PCR</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html#sec-b552" data-page-id="79523360" style="padding: 10px 0px;">Prendre Un Rendez Vous</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Accueil.html#sec-b552" data-page-id="79523360" style="padding: 10px 0px;">Nous Contacter</a>
 </li></ul>
-              </div>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav>
-      </div></header>
-    <section class="u-align-center u-clearfix u-image u-section-1" id="carousel_834f" data-image-width="1900" data-image-height="1086">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-26-xl u-size-27-lg u-size-28-md u-size-28-sm u-size-28-xs u-layout-cell-1">
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav></header>
+    <section id="carousel_b614" class="u-carousel u-carousel-fade u-hidden-sm u-hidden-xs u-slide u-block-0e13-1" data-u-ride="carousel" data-interval="5000" data-pause="false">
+      <ol class="u-carousel-indicators u-block-0e13-5">
+        <li data-u-target="#carousel_b614" class="u-active u-active-custom-color-2 u-grey-5 u-shape-circle" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#carousel_b614" class="u-active-custom-color-2 u-grey-5 u-shape-circle" data-u-slide-to="1" style="width: 10px; height: 10px;"></li>
+        <li data-u-target="#carousel_b614" class="u-active-custom-color-2 u-grey-5 u-shape-circle" data-u-slide-to="2" style="width: 10px; height: 10px;"></li>
+      </ol>
+      <div class="u-carousel-inner" role="listbox">
+        <div class="skrollable skrollable-between u-active u-align-center u-carousel-item u-clearfix u-image u-shading u-section-1-1" src="" data-image-width="1000" data-image-height="500">
+          <div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-container-style u-custom-color-3 u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-opacity u-opacity-60 u-radius-50 u-shape-round u-group-1">
               <div class="u-container-layout u-container-layout-1">
-                <h1 class="u-custom-font u-font-roboto-condensed u-text u-text-palette-1-base u-text-1" data-animation-name="slideIn" data-animation-duration="2250" data-animation-delay="750" data-animation-direction="Left">Votre Test PCR à Domicile.<br>
-                </h1>
-                <p class="u-text u-text-2" data-animation-name="fadeIn" data-animation-duration="2500" data-animation-delay="1500" data-animation-direction="">Vous
+                <h2 class="u-align-center u-text u-text-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">Votre Test PCR à Domicile.</h2>
+                <p class="u-text u-text-2" data-animation-name="fadeIn" data-animation-duration="1750" data-animation-delay="0" data-animation-direction="Left"> Vous
 souhaitez faire un test RT-PCR pour la COVID-19 mais vous ne voulez pas
-att​​endre des heures devant un laboratoire, pas besoin de vous déplacer&nbsp;! AgroMed
+attendre des heures devant u<span class="u-text-custom-color-2"></span>n laboratoire, pas besoin de vous déplacer&nbsp;! AgroMed
 Consulting, travaillant avec différents laboratoires agréés par le Ministère de
 la Santé, vous propose un prélèvement à domicile (maison, hôtel ou bureau). 
-&nbsp;
-Ce
+&nbsp;&nbsp;<br>
+                  <br>Ce
 concept a été initié pour éviter les difficultés et contraintes associées à la
-réalisation des tests COVID-19 au niveau des centres médicaux agréées.</p>
-                <a href="" class="u-align-left u-btn u-button-style u-custom-font u-font-roboto-condensed u-text-body-alt-color u-btn-1" data-animation-name="bounceIn" data-animation-duration="1500" data-animation-delay="2750" data-animation-direction="">EN SAVOIR PLUS</a>
+réalisation des tests COVID-19 au niveau des centres médicaux agréées.
+                </p>
               </div>
             </div>
-            <div class="u-container-style u-image u-layout-cell u-right-cell u-size-32-md u-size-32-sm u-size-32-xs u-size-33-lg u-size-34-xl u-image-1" data-animation-name="slideIn" data-animation-duration="2250" data-animation-delay="0" data-animation-direction="Right">
-              <div class="u-container-layout u-valign-bottom"></div>
+          </div>
+        </div>
+        <div class="skrollable skrollable-between u-align-center u-carousel-item u-clearfix u-image u-shading u-section-1-2" src="" data-image-width="1000" data-image-height="500">
+          <div class="u-align-left u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+            <div class="u-container-style u-custom-color-3 u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-opacity u-opacity-60 u-radius-50 u-shape-round u-group-1">
+              <div class="u-container-layout u-container-layout-1">
+                <h2 class="u-align-center u-text u-text-1" data-animation-name="bounceIn" data-animation-duration="1000" data-animation-delay="500" data-animation-direction="Right"> Agromed prends soin de Vous.</h2>
+                <p class="u-align-center u-text u-text-2" data-animation-name="slideIn" data-animation-duration="1250" data-animation-delay="0" data-animation-direction="Up">&nbsp;Votre résultat sera
+disponible entre 12 et 48 heures maximum à compter de l’heure de prélèvement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skrollable skrollable-between u-align-center u-carousel-item u-clearfix u-image u-shading u-section-1-3" src="" data-image-width="1920" data-image-height="1080">
+          <div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-container-style u-custom-color-3 u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-opacity u-opacity-60 u-radius-50 u-shape-round u-group-1">
+              <div class="u-container-layout u-container-layout-1">
+                <h2 class="u-align-center u-text u-text-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Right">Votre Test PCR à Domicile.</h2>
+                <p class="u-align-center u-text u-text-2" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="250" data-animation-direction="Right"> Les résultats qui vous seront rendus ont authentifiés avec
+un QR code, Technologie requise par les autorités sanitaires partout dans le monde.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-2">
-        <div class="u-gutter-0 u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-left-cell u-palette-1-base u-size-20 u-layout-cell-3" data-animation-name="slideIn" data-animation-duration="1500" data-animation-delay="0" data-animation-direction="Left">
-              <div class="u-container-layout u-container-layout-3"><span class="u-icon u-icon-circle u-spacing-20 u-white u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="-38 0 511 511.99956" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9d77"></use></svg><svg class="u-svg-content" viewBox="-38 0 511 511.99956" id="svg-9d77"><g id="surface1"><path d="M 413.476562 341.910156 C 399.714844 379.207031 378.902344 411.636719 351.609375 438.289062 C 320.542969 468.625 279.863281 492.730469 230.699219 509.925781 C 229.085938 510.488281 227.402344 510.949219 225.710938 511.289062 C 223.476562 511.730469 221.203125 511.96875 218.949219 512 L 218.507812 512 C 216.105469 512 213.691406 511.757812 211.296875 511.289062 C 209.605469 510.949219 207.945312 510.488281 206.339844 509.9375 C 157.117188 492.769531 116.386719 468.675781 85.289062 438.339844 C 57.984375 411.6875 37.175781 379.277344 23.433594 341.980469 C -1.554688 274.167969 -0.132812 199.464844 1.011719 139.433594 L 1.03125 138.511719 C 1.261719 133.554688 1.410156 128.347656 1.492188 122.597656 C 1.910156 94.367188 24.355469 71.011719 52.589844 69.4375 C 111.457031 66.152344 156.996094 46.953125 195.90625 9.027344 L 196.246094 8.714844 C 202.707031 2.789062 210.847656 -0.117188 218.949219 0.00390625 C 226.761719 0.105469 234.542969 3.007812 240.773438 8.714844 L 241.105469 9.027344 C 280.023438 46.953125 325.5625 66.152344 384.429688 69.4375 C 412.664062 71.011719 435.109375 94.367188 435.527344 122.597656 C 435.609375 128.386719 435.757812 133.585938 435.988281 138.511719 L 436 138.902344 C 437.140625 199.046875 438.554688 273.898438 413.476562 341.910156 Z M 413.476562 341.910156 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,86.666667%,50.196078%);fill-opacity:1;"></path><path d="M 413.476562 341.910156 C 399.714844 379.207031 378.902344 411.636719 351.609375 438.289062 C 320.542969 468.625 279.863281 492.730469 230.699219 509.925781 C 229.085938 510.488281 227.402344 510.949219 225.710938 511.289062 C 223.476562 511.730469 221.203125 511.96875 218.949219 512 L 218.949219 0.00390625 C 226.761719 0.105469 234.542969 3.007812 240.773438 8.714844 L 241.105469 9.027344 C 280.023438 46.953125 325.5625 66.152344 384.429688 69.4375 C 412.664062 71.011719 435.109375 94.367188 435.527344 122.597656 C 435.609375 128.386719 435.757812 133.585938 435.988281 138.511719 L 436 138.902344 C 437.140625 199.046875 438.554688 273.898438 413.476562 341.910156 Z M 413.476562 341.910156 " style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,66.666667%,38.823529%);fill-opacity:1;"></path><path d="M 346.101562 256 C 346.101562 326.207031 289.097656 383.355469 218.949219 383.605469 L 218.5 383.605469 C 148.144531 383.605469 90.894531 326.359375 90.894531 256 C 90.894531 185.644531 148.144531 128.398438 218.5 128.398438 L 218.949219 128.398438 C 289.097656 128.648438 346.101562 185.796875 346.101562 256 Z M 346.101562 256 " style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;"></path><path d="M 346.101562 256 C 346.101562 326.207031 289.097656 383.355469 218.949219 383.605469 L 218.949219 128.398438 C 289.097656 128.648438 346.101562 185.796875 346.101562 256 Z M 346.101562 256 " style=" stroke:none;fill-rule:nonzero;fill:rgb(88.235294%,92.156863%,94.117647%);fill-opacity:1;"></path><path d="M 276.417969 237.625 L 218.949219 295.101562 L 206.53125 307.519531 C 203.597656 310.453125 199.75 311.917969 195.90625 311.917969 C 192.058594 311.917969 188.214844 310.453125 185.277344 307.519531 L 158.578125 280.808594 C 152.710938 274.941406 152.710938 265.4375 158.578125 259.566406 C 164.4375 253.699219 173.953125 253.699219 179.820312 259.566406 L 195.90625 275.652344 L 255.175781 216.382812 C 261.042969 210.511719 270.558594 210.511719 276.417969 216.382812 C 282.285156 222.25 282.285156 231.765625 276.417969 237.625 Z M 276.417969 237.625 " style=" stroke:none;fill-rule:nonzero;fill:rgb(70.588235%,82.352941%,84.313725%);fill-opacity:1;"></path><path d="M 276.417969 237.625 L 218.949219 295.101562 L 218.949219 252.605469 L 255.175781 216.382812 C 261.042969 210.511719 270.558594 210.511719 276.417969 216.382812 C 282.285156 222.25 282.285156 231.765625 276.417969 237.625 Z M 276.417969 237.625 " style=" stroke:none;fill-rule:nonzero;fill:rgb(43.529412%,64.705882%,66.666667%);fill-opacity:1;"></path>
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-body-alt-color u-block-0e13-3" href="#carousel_b614" role="button" data-u-slide="prev">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                    c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg>
+        </span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-body-alt-color u-block-0e13-4" href="#carousel_b614" role="button" data-u-slide="next">
+        <span aria-hidden="true">
+          <svg viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg>
+        </span>
+        <span class="sr-only">Next</span>
+      </a>
+    </section>
+    <section class="u-align-center u-clearfix u-gradient u-section-2" id="carousel_cd7d">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-text-white u-text-1">Un Service Fiable et de Qualité</h1>
+        <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-90 u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-1" data-animation-name="slideIn" data-animation-duration="2000" data-animation-delay="0" data-animation-direction="Left">
+              <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 510 510" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b35"></use></svg><svg class="u-svg-content" viewBox="0 0 510 510" id="svg-9b35"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="68.217" x2="452.683" y1="24.077" y2="408.543"><stop offset="0" stop-color="#b5dbff"></stop><stop offset="1" stop-color="#76e2f8"></stop>
+</linearGradient><linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="505.87" x2="165.698" y1="467.85" y2="127.677"><stop offset="0" stop-color="#b5dbff" stop-opacity="0"></stop><stop offset=".2428" stop-color="#93cef6" stop-opacity=".243"></stop><stop offset=".5763" stop-color="#6abfec" stop-opacity=".576"></stop><stop offset=".8403" stop-color="#51b5e5" stop-opacity=".84"></stop><stop offset="1" stop-color="#48b2e3"></stop>
+</linearGradient><linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="189.229" x2="338.659" y1="154.919" y2="304.349"><stop offset="0" stop-color="#edf5ff"></stop><stop offset="1" stop-color="#d5e8fe"></stop>
+</linearGradient><linearGradient id="lg1"><stop offset="0" stop-color="#b5dbff" stop-opacity="0"></stop><stop offset=".1734" stop-color="#8fc5e9" stop-opacity=".173"></stop><stop offset=".4541" stop-color="#56a4c8" stop-opacity=".454"></stop><stop offset=".6955" stop-color="#2d8db1" stop-opacity=".696"></stop><stop offset=".8853" stop-color="#147ea2" stop-opacity=".885"></stop><stop offset="1" stop-color="#0b799d"></stop>
+</linearGradient><linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="301.334" x2="-5.659" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lg1" y1="263.591" y2="116.235"></linearGradient><linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="418.772" x2="313.712" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lg1" y1="323.183" y2="243.364"></linearGradient><linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="401.086" x2="225.987" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lg1" y1="398.053" y2="222.954"></linearGradient><linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="193.601" x2="320.838" y1="190.568" y2="317.804"><stop offset="0" stop-color="#b9dd39"></stop><stop offset="1" stop-color="#90cc1c"></stop>
+</linearGradient><linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="374.986" x2="327.673" y1="329.247" y2="281.933"><stop offset="0" stop-color="#6b0" stop-opacity="0"></stop><stop offset="1" stop-color="#6b0"></stop>
+</linearGradient><linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="243.382" x2="375.165" y1="154.881" y2="286.664"><stop offset="0" stop-color="#0b799d"></stop><stop offset="1" stop-color="#07485e"></stop>
+</linearGradient><g><g><path d="m446.166 67.941c-56.18 0-110.644-19.357-154.224-54.811-21.517-17.506-52.367-17.506-73.884 0-43.579 35.455-98.044 54.811-154.223 54.811-17.543 0-31.764 14.221-31.764 31.764v85.132c0 109.211 49.177 212.617 133.894 281.54l26.147 21.272c36.631 29.802 89.149 29.802 125.78 0l26.147-21.272c84.716-68.922 133.894-172.333 133.894-281.544 0-32.684 0-63.399 0-85.135-.003-17.543-14.224-31.757-31.767-31.757z" fill="url(#SVGID_1_)"></path><path d="m255 481.973c-6.124 0-12.114-2.129-16.865-5.994l-50.009-40.686c-36.527-29.718-66.525-67.904-86.749-110.429s-30.914-89.893-30.914-136.982v-67.558c0-8.173 6.682-15.123 14.844-15.554 55.657-2.943 109.464-23.582 152.828-58.862 4.752-3.866 10.741-5.994 16.865-5.994 6.125 0 12.114 2.128 16.865 5.993 43.366 35.281 97.174 55.92 152.831 58.863 8.16.431 14.841 7.38 14.841 15.552v67.556c0 47.09-10.69 94.458-30.914 136.984-20.224 42.527-50.221 80.713-86.748 110.431l-50.01 40.686c-4.751 3.866-10.74 5.994-16.865 5.994z" fill="url(#SVGID_2_)"></path><path d="m255 463.322c-5.608 0-11.092-1.949-15.442-5.488l-45.789-37.252c-33.445-27.21-60.911-62.174-79.428-101.11s-28.305-82.307-28.305-125.423v-61.857c0-7.483 6.118-13.846 13.591-14.242 50.96-2.695 100.227-21.592 139.931-53.895 4.351-3.539 9.835-5.489 15.442-5.489 5.608 0 11.092 1.949 15.441 5.488 39.706 32.304 88.974 51.201 139.934 53.896 7.472.395 13.589 6.757 13.589 14.239v61.855c0 43.116-9.788 86.487-28.305 125.425s-45.983 73.902-79.428 101.112l-45.79 37.252c-4.349 3.54-9.833 5.489-15.441 5.489z" fill="url(#SVGID_3_)"></path><path d="m477.93 99.698c0-17.543-14.221-31.757-31.764-31.757-56.18 0-110.644-19.357-154.224-54.811-10.759-8.753-23.85-13.13-36.942-13.13v510c22.287 0 44.574-7.45 62.89-22.351l26.147-21.272c84.716-68.922 133.893-172.333 133.894-281.544-.001-32.685-.001-63.4-.001-85.135z" fill="url(#SVGID_4_)"></path>
+</g><path d="m421.426 148.41c-9.991-9.99-26.189-7.942-36.18 2.048l-124.649 124.648c-1.215 1.215-4.649 3.518-5.597 3.518s-2.334-.255-3.55-1.471l-47.78-47.78c-9.991-9.99-25.165-9.99-35.156 0-9.991 9.991-11.015 24.141-1.024 34.132l190.716 190.716c71.129-64.213 113.982-153.998 119.184-249.654z" fill="url(#SVGID_5_)"></path><path d="m344.037 466.376c60.467-49.194 102.822-115.961 122.119-189.864l-115.285-115.284c-24.06-25.412-58.112-39.22-95.87-39.22-71.939-.001-129.961 58.022-129.96 129.961 0 37.758 13.808 71.809 39.221 95.869l138.558 138.558c4.233 4.233 10.983 4.579 15.627.801z" fill="url(#SVGID_6_)"></path><circle cx="255" cy="251.966" fill="url(#SVGID_7_)" r="132.007"></circle><path d="m361.599 174.105-101.002 101.001c-1.215 1.215-4.649 3.518-5.597 3.518s-2.334-.255-3.55-1.471l-47.78-47.78c-9.991-9.99-25.165-9.99-35.156 0-9.991 9.991-11.015 24.141-1.024 34.132l117.13 117.13c58.643-13.445 102.387-65.947 102.387-128.669 0-29.12-9.437-56.032-25.408-77.861z" fill="url(#SVGID_8_)"></path><path d="m255 327.742c-15.008 0-29.118-5.845-39.73-16.457l-47.78-47.779c-9.991-9.991-9.991-26.189 0-36.18 9.99-9.99 26.188-9.99 36.18 0l47.78 47.78c1.216 1.216 2.602 1.471 3.55 1.471s2.334-.255 3.55-1.471l126.696-126.696c9.991-9.99 26.189-9.99 36.18 0 9.991 9.991 9.991 26.189 0 36.18l-126.696 126.695c-10.612 10.612-24.722 16.457-39.73 16.457z" fill="url(#SVGID_9_)"></path>
 </g></svg></span>
-                <h2 class="u-align-center u-custom-font u-font-roboto-condensed u-text u-text-3">Sécurité</h2>
-                <p class="u-align-center u-text u-text-4"> Résultats qui vous seront rendus ont
+                <h4 class="u-text u-text-default u-text-palette-1-base u-text-2">Sécurisé</h4>
+                <p class="u-custom-item u-text u-text-palette-1-dark-2 u-text-3">Résultats qui vous seront rendus ont
 authentifiés avec un QR code. Vous pouvez aussi contacter directement le
 laboratoire pour vérifier l’authenticité de votre résultat.&nbsp; </p>
               </div>
             </div>
-            <div class="u-align-center u-container-style u-layout-cell u-palette-4-base u-size-20 u-layout-cell-4" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="1000" data-animation-direction="Down">
-              <div class="u-container-layout u-container-layout-4"><span class="u-align-center u-icon u-icon-circle u-spacing-20 u-white u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.992 511.992" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d54a"></use></svg><svg class="u-svg-content" viewBox="0 0 511.992 511.992" x="0px" y="0px" id="svg-d54a" style="enable-background:new 0 0 511.992 511.992;"><g id="XMLID_806_"><g id="XMLID_1434_"><rect id="XMLID_1457_" x="275.641" y="68.262" style="fill:#D5F5FB;" width="68.414" height="39.476"></rect><path id="XMLID_1456_" style="fill:#FF7480;" d="M273.848,68.262h72c13.255,0,24-10.745,24-24v0c0-13.255-10.745-24-24-24h-72    c-13.255,0-24,10.745-24,24v0C249.848,57.517,260.593,68.262,273.848,68.262z"></path><circle id="XMLID_1452_" style="fill:#5DDEF5;" cx="310.001" cy="299.738" r="192"></circle><circle id="XMLID_2618_" style="fill:#FFFFFF;" cx="310.001" cy="299.738" r="145.129"></circle><circle id="XMLID_2592_" style="fill:#FF838E;" cx="310.001" cy="299.738" r="21.074"></circle>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-90 u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-2" data-animation-name="slideIn" data-animation-duration="2000" data-animation-delay="0" data-animation-direction="Left">
+              <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-icon u-icon-circle u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-cd3f"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-cd3f"><g><path d="m225.752 352.347-18.828 56.525c-3.51 10.509-16.918 13.789-24.837 5.86l-84.861-84.882c-7.879-7.879-4.69-21.318 5.869-24.838l56.474-18.828 43.245 23.239z" fill="#0066b2"></path><path d="m225.752 352.347-18.828 56.525c-3.51 10.509-16.918 13.789-24.837 5.86l-42.406-42.406 62.983-62.984.15.08z" fill="#004692"></path><path d="m508.082 15.928c-1.15-6.029-5.919-10.759-11.949-11.919-55.477-10.724-112.103.353-158.842 29.798l53.021 82.73 87.74 58.091c29.462-46.673 40.618-103.254 30.03-158.7z" fill="#cee8ff"></path><path d="m478.055 174.623-84.641-56.035 110.478-110.48c2.12 2.08 3.61 4.79 4.19 7.819 10.589 55.446-.57 112.03-30.027 158.696z" fill="#aedaff"></path><path d="m184.716 98.64 72.522 14.549-99.1 99.141-7.859.8-42.446-42.446-21.208 21.218c-5.859 5.86-15.358 5.86-21.208.01-5.859-5.859-5.869-15.358-.01-21.218 7.849-7.849 43.945-43.966 51.525-51.545 17.789-17.789 43.127-25.459 67.784-20.509z" fill="#e63950"></path><path d="m392.864 394.863c-2.51 2.51-49.325 49.345-51.685 51.705-5.859 5.859-15.348 5.859-21.208 0-5.859-5.849-5.859-15.349-.01-21.208l21.228-21.228-42.431-42.45.215-7.284 100.2-100.252c1.95 8.159 4.54 26.078 14.268 73.343 4.77 24.518-2.919 49.706-20.577 67.374z" fill="#cd0000"></path><path d="m139.889 372.075c-31.154-31.168-80.651-30.258-112.093 1.196-24.758 24.77-28.483 91.623-27.704 124.01.192 8.001 6.632 14.441 14.633 14.634 33.35.751 99.362-3.101 123.968-27.718 31.346-31.359 32.447-80.859 1.196-112.122z" fill="#ffda2d"></path><path d="m138.691 484.195c-24.607 24.618-90.61 28.467-123.967 27.717-4-.09-7.609-1.75-10.239-4.389l135.426-135.428c31.226 31.267 30.117 80.753-1.22 112.1z" fill="#ffaa17"></path><path d="m30.046 481.928c.768-40.16 8.515-76.995 18.966-87.451 19.931-19.939 50.421-20.445 69.661-1.196 19.202 19.21 18.677 49.829-1.195 69.709-8.958 8.962-41.515 18.029-87.432 18.938z" fill="#ffaa17"></path><path d="m117.473 462.987c-8.949 8.969-41.486 18.018-87.391 18.938l88.611-88.612c19.178 19.208 18.648 49.805-1.22 69.674z" fill="#ff7900"></path><path d="m159.569 286.183 17.468-53.365 101.929 101.931-53.214 17.598z" fill="#edf5ff"></path><path d="m278.966 334.749-53.214 17.598-33.047-33.047 35.406-35.407z" fill="#cee8ff"></path><g><g><path d="m22.983 213.141-18.384 18.392c-5.856 5.859-5.854 15.355.004 21.211 5.856 5.854 15.353 5.857 21.211-.004l18.384-18.392c5.856-5.859 5.854-15.355-.004-21.211-5.858-5.857-15.355-5.856-21.211.004z" fill="#e63950"></path><g><path d="m298.751 467.801c-5.859-5.857-15.355-5.856-21.211.004l-18.384 18.392c-5.856 5.859-5.854 15.355.004 21.211 5.856 5.854 15.353 5.857 21.211-.004l18.384-18.392c5.856-5.859 5.854-15.355-.004-21.211z" fill="#cd0000"></path>
+</g>
+</g>
+</g><path d="m298.874 64.473-95.578 95.618 52.723 95.894 95.773 52.637 95.767-95.813c11.684-11.689 21.866-24.515 30.493-38.182-40.459-40.476-102.438-102.482-140.761-140.82-13.753 8.665-26.659 18.904-38.417 30.666z" fill="#edf5ff"></path><path d="m478.055 174.623c-8.629 13.669-18.808 26.498-30.497 38.187l-95.77 95.811-95.77-52.635 151.715-151.716c25.057 25.077 50.314 50.345 70.322 70.353z" fill="#cee8ff"></path><path d="m150.28 213.13 148.514 148.516 52.997-53.023-148.495-148.532z" fill="#cee8ff"></path><path d="m351.788 308.621-52.994 53.025-74.212-74.213 53.014-53.025z" fill="#aedaff"></path><path d="m439.115 72.722c-17.584-17.592-46.054-17.596-63.642 0-17.542 17.549-17.541 46.103 0 63.65 17.583 17.592 46.054 17.597 63.641 0 17.542-17.547 17.543-46.101.001-63.65z" fill="#4ec9ff"></path><path d="m439.119 136.377c-17.558 17.558-45.975 17.588-63.563.07l63.643-63.644c17.458 17.558 17.428 46.055-.08 63.574z" fill="#0095ff"></path><path d="m417.9 115.166c-5.861 5.863-15.348 5.866-21.212 0-5.852-5.855-5.852-15.381 0-21.236 5.86-5.863 15.348-5.866 21.211 0 5.853 5.854 5.853 15.381.001 21.236z" fill="#9bfcff"></path><path d="m417.901 115.168c-5.829 5.83-15.268 5.86-21.138.07l21.218-21.218c5.77 5.86 5.74 15.319-.08 21.148z" fill="#4ec9ff"></path>
+</g></svg></span>
+                <h4 class="u-text u-text-default u-text-palette-1-base u-text-4">Rapidité</h4>
+                <p class="u-custom-item u-text u-text-palette-1-dark-2 u-text-5">Votre résultat sera
+disponible entre 12 et 48 heures maximum à compter de l’heure de prélèvement.&nbsp;&nbsp;</p>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-custom-item u-list-item u-opacity u-opacity-90 u-radius-20 u-repeater-item u-shape-round u-video-cover u-white u-list-item-3" data-animation-name="fadeIn" data-animation-duration="2000" data-animation-delay="0" data-animation-direction="Left">
+              <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-icon u-icon-circle u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.992 511.992" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4d67"></use></svg><svg class="u-svg-content" viewBox="0 0 511.992 511.992" x="0px" y="0px" id="svg-4d67" style="enable-background:new 0 0 511.992 511.992;"><g id="XMLID_806_"><g id="XMLID_1434_"><rect id="XMLID_1457_" x="275.641" y="68.262" style="fill:#D5F5FB;" width="68.414" height="39.476"></rect><path id="XMLID_1456_" style="fill:#FF7480;" d="M273.848,68.262h72c13.255,0,24-10.745,24-24v0c0-13.255-10.745-24-24-24h-72    c-13.255,0-24,10.745-24,24v0C249.848,57.517,260.593,68.262,273.848,68.262z"></path><circle id="XMLID_1452_" style="fill:#5DDEF5;" cx="310.001" cy="299.738" r="192"></circle><circle id="XMLID_2618_" style="fill:#FFFFFF;" cx="310.001" cy="299.738" r="145.129"></circle><circle id="XMLID_2592_" style="fill:#FF838E;" cx="310.001" cy="299.738" r="21.074"></circle>
 </g><g id="XMLID_386_"><path id="XMLID_389_" d="M511.005,279.646c-4.597-46.238-25.254-89.829-58.168-122.744    c-28.128-28.127-62.556-46.202-98.782-54.239V77.255c14.796-3.681,25.794-17.074,25.794-32.993c0-18.748-15.252-34-34-34h-72    c-18.748,0-34,15.252-34,34c0,15.918,10.998,29.311,25.793,32.993v25.479c-36.115,8.071-70.429,26.121-98.477,54.169    c-6.138,6.138-11.798,12.577-16.979,19.269c-0.251-0.019-0.502-0.038-0.758-0.038H78.167c-5.522,0-10,4.477-10,10s4.478,10,10,10    h58.412c-7.332,12.275-13.244,25.166-17.744,38.436H10c-5.522,0-10,4.477-10,10s4.478,10,10,10h103.184    c-2.882,12.651-4.536,25.526-4.963,38.437H64c-5.522,0-10,4.477-10,10s4.478,10,10,10h44.54    c0.844,12.944,2.925,25.82,6.244,38.437H50c-5.522,0-10,4.477-10,10s4.478,10,10,10h71.166    c9.81,25.951,25.141,50.274,45.999,71.132c32.946,32.946,76.582,53.608,122.868,58.181c6.606,0.652,13.217,0.975,19.819,0.975    c39.022,0,77.548-11.293,110.238-32.581c4.628-3.014,5.937-9.209,2.923-13.837s-9.209-5.937-13.837-2.923    c-71.557,46.597-167.39,36.522-227.869-23.957c-70.962-70.962-70.962-186.425,0-257.388c70.961-70.961,186.424-70.961,257.387,0    c60.399,60.4,70.529,156.151,24.086,227.673c-3.008,4.632-1.691,10.826,2.94,13.833c4.634,3.008,10.826,1.691,13.833-2.941    C504.367,371.396,515.537,325.241,511.005,279.646z M259.849,44.263c0-7.72,6.28-14,14-14h72c7.72,0,14,6.28,14,14s-6.28,14-14,14    h-1.794h-68.413h-1.793C266.129,58.263,259.849,51.982,259.849,44.263z M285.642,99.296V78.263h48.413v20.997    C317.979,97.348,301.715,97.36,285.642,99.296z"></path><path id="XMLID_391_" d="M445.77,425.5c-2.64,0-5.21,1.07-7.069,2.93c-1.87,1.86-2.931,4.44-2.931,7.07    c0,2.63,1.061,5.21,2.931,7.07c1.859,1.87,4.43,2.93,7.069,2.93c2.63,0,5.2-1.06,7.07-2.93c1.86-1.86,2.93-4.44,2.93-7.07    c0-2.63-1.069-5.21-2.93-7.07C450.97,426.57,448.399,425.5,445.77,425.5z"></path><path id="XMLID_394_" d="M310.001,144.609c-85.538,0-155.129,69.59-155.129,155.129s69.591,155.129,155.129,155.129    s155.129-69.59,155.129-155.129S395.539,144.609,310.001,144.609z M310.001,434.867c-74.511,0-135.129-60.619-135.129-135.129    s60.618-135.129,135.129-135.129S445.13,225.228,445.13,299.738S384.512,434.867,310.001,434.867z"></path><path id="XMLID_397_" d="M373.257,222.34l-49.53,49.529c-4.142-2.048-8.801-3.205-13.726-3.205c-4.926,0-9.584,1.157-13.726,3.205    l-22.167-22.167c-3.906-3.905-10.236-3.905-14.143,0c-3.905,3.905-3.905,10.237,0,14.142l22.167,22.167    c-2.049,4.142-3.205,8.801-3.205,13.726c0,17.134,13.939,31.074,31.074,31.074s31.074-13.94,31.074-31.074    c0-4.925-1.157-9.584-3.205-13.726l48.076-48.076v0l1.453-1.453c3.905-3.905,3.905-10.237,0-14.142    S377.164,218.435,373.257,222.34z M310.001,310.812c-6.106,0-11.074-4.968-11.074-11.074s4.968-11.074,11.074-11.074    s11.074,4.968,11.074,11.074S316.107,310.812,310.001,310.812z"></path><path id="XMLID_398_" d="M416.92,289.86h-9.265c-5.522,0-10,4.477-10,10s4.478,10,10,10h9.265c5.522,0,10-4.477,10-10    S422.442,289.86,416.92,289.86z"></path><path id="XMLID_399_" d="M212.346,289.616h-9.264c-5.522,0-10,4.477-10,10s4.478,10,10,10h9.264c5.522,0,10-4.477,10-10    S217.868,289.616,212.346,289.616z"></path><path id="XMLID_400_" d="M310.123,212.083c5.522,0,10-4.477,10-10v-9.264c0-5.523-4.478-10-10-10s-10,4.477-10,10v9.264    C300.123,207.606,304.601,212.083,310.123,212.083z"></path><path id="XMLID_424_" d="M309.879,387.393c-5.522,0-10,4.477-10,10v9.264c0,5.523,4.478,10,10,10s10-4.477,10-10v-9.264    C319.879,391.87,315.401,387.393,309.879,387.393z"></path><path id="XMLID_425_" d="M10,351.44c-2.63,0-5.21,1.07-7.07,2.93c-1.86,1.86-2.93,4.44-2.93,7.07c0,2.64,1.069,5.21,2.93,7.07    s4.44,2.93,7.07,2.93s5.21-1.07,7.069-2.93c1.86-1.86,2.931-4.44,2.931-7.07s-1.07-5.21-2.931-7.07    C15.21,352.51,12.63,351.44,10,351.44z"></path>
 </g>
 </g></svg></span>
-                <h2 class="u-custom-font u-font-roboto-condensed u-text u-text-5">rapidité</h2>
-                <p class="u-text u-text-6"> Votre résultat sera disponible entre 12 et 48
-heures maximum à compter de l’heure de prélèvement</p>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-custom-color-2 u-layout-cell u-right-cell u-size-20 u-layout-cell-5" data-animation-name="slideIn" data-animation-duration="1500" data-animation-delay="500" data-animation-direction="Right">
-              <div class="u-container-layout u-container-layout-5"><span class="u-icon u-icon-circle u-spacing-20 u-white u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-c65d"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-c65d" style="enable-background:new 0 0 512 512;"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="244.609" y1="248.3229" x2="502.949" y2="-10.0171" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#FFFFFF"></stop><stop offset="1" style="stop-color:#C3C3C3"></stop>
-</linearGradient><path style="fill:url(#SVGID_1_);" d="M435.477,258.476c0,20.617-3.142,40.513-8.992,59.204c-0.633,2.086-1.316,4.148-2.049,6.197  c-2.31,6.682-4.992,13.19-7.998,19.524c-2.521,5.341-5.279,10.544-8.271,15.599c-5.961,10.147-12.792,19.71-20.418,28.59  c-7.973,9.302-16.792,17.86-26.33,25.56c-34.042,27.41-77.325,43.829-124.445,43.829c-109.628,0-198.503-88.875-198.503-198.503  S127.344,59.973,236.973,59.973S435.477,148.848,435.477,258.476z"></path><linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="315.9182" y1="251.5286" x2="103.7421" y2="275.3482" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#C3C3C3;stop-opacity:0"></stop><stop offset="0.267" style="stop-color:#A4A4A4;stop-opacity:0.267"></stop><stop offset="0.542" style="stop-color:#8B8B8B;stop-opacity:0.542"></stop><stop offset="0.794" style="stop-color:#7C7C7C;stop-opacity:0.794"></stop><stop offset="1" style="stop-color:#777777"></stop>
-</linearGradient><path style="fill:url(#SVGID_2_);" d="M236.973,123.992c-7.789,0-14.104,112.592-14.104,120.381c0,4.963,2.57,9.32,6.446,11.833  l145.297,145.297c24.512-23.594,42.967-53.429,52.82-86.949C394.987,282.345,236.973,123.992,236.973,123.992z"></path><linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="235.8586" y1="262.5425" x2="235.8586" y2="229.1925" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#F18D00"></stop><stop offset="1" style="stop-color:#ED7103"></stop>
-</linearGradient><circle style="fill:url(#SVGID_3_);" cx="236.976" cy="258.479" r="11.218"></circle><linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="271.2131" y1="279.83" x2="281.0432" y2="248.87" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_4_);" d="M236.973,100.82c-1.362,0-2.595,0.552-3.488,1.445c-0.892,0.892-1.445,2.125-1.445,3.488  v36.167c0,1.021,0.31,1.97,0.842,2.757c0.354,0.525,0.807,0.978,1.332,1.332c0.262,0.178,0.543,0.33,0.838,0.455  c0.59,0.249,1.239,0.388,1.919,0.388c1.362,0,2.595-0.552,3.488-1.445c0.892-0.893,1.445-2.125,1.445-3.488v-36.167  C241.905,103.028,239.696,100.82,236.973,100.82z"></path><linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="193.8578" y1="255.2691" x2="203.6878" y2="224.3091" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_5_);" d="M236.973,370.102c-2.724,0-4.932,2.209-4.932,4.932v36.167c0,0.47,0.086,0.915,0.209,1.345  c0.588,2.065,2.469,3.587,4.722,3.587c0.681,0,1.33-0.139,1.919-0.388c1.77-0.749,3.013-2.502,3.013-4.545v-36.167  C241.905,372.31,239.696,370.102,236.973,370.102z"></path><linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="349.604" y1="270.827" x2="395.454" y2="239.867" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_6_);" d="M389.697,253.545H353.53c-2.724,0-4.932,2.208-4.932,4.932c0,2.724,2.208,4.932,4.932,4.932  h36.167c2.724,0,4.932-2.208,4.932-4.932C394.63,255.753,392.421,253.545,389.697,253.545z"></path><linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="81.3745" y1="270.8276" x2="127.2245" y2="239.8676" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_7_);" d="M125.348,258.476c0-1.021-0.31-1.971-0.842-2.758c-0.354-0.525-0.807-0.978-1.332-1.332  c-0.787-0.532-1.736-0.842-2.758-0.842H84.248c-1.362,0-2.595,0.552-3.488,1.445c-0.892,0.893-1.445,2.125-1.445,3.488  c0,2.724,2.208,4.932,4.932,4.932h36.167c1.362,0,2.595-0.552,3.488-1.445S125.348,259.839,125.348,258.476z"></path><linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="362.7839" y1="323.7611" x2="398.0839" y2="292.8011" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_8_);" d="M322.879,179.545l25.574-25.574c1.926-1.926,1.926-5.049,0-6.975  c-1.926-1.927-5.049-1.926-6.975,0l-25.574,25.574c-1.927,1.927-1.927,5.049,0,6.975  C317.83,181.471,320.953,181.471,322.879,179.545z"></path><linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="79.0972" y1="216.568" x2="114.3872" y2="185.608" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_9_);" d="M158.041,337.408c-1.926-1.926-5.049-1.926-6.975,0l-25.574,25.574  c-1.661,1.661-1.881,4.209-0.677,6.116c0.153,0.242,0.336,0.468,0.535,0.686c0.051,0.056,0.087,0.119,0.142,0.174l0,0l0,0  c0.94,0.94,2.165,1.414,3.397,1.436c0.03,0.001,0.06,0.009,0.09,0.009c1.262,0,2.524-0.482,3.488-1.445l0,0l25.574-25.574  c0.722-0.722,1.174-1.612,1.354-2.545c0.06-0.311,0.09-0.626,0.09-0.942C159.486,339.633,159.005,338.37,158.041,337.408z"></path><linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="268.7621" y1="216.5879" x2="304.0421" y2="185.6279" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_10_);" d="M348.453,362.981l-25.574-25.574c-0.602-0.602-1.326-0.993-2.088-1.219  c-0.733-0.217-1.501-0.275-2.251-0.145c-0.965,0.169-1.89,0.617-2.635,1.362c-1.927,1.927-1.927,5.049,0,6.975l25.574,25.574  c0.289,0.289,0.61,0.52,0.945,0.722c1.896,1.146,4.393,0.916,6.031-0.722c0.785-0.785,1.233-1.772,1.377-2.793  C350.041,365.681,349.594,364.123,348.453,362.981z"></path><linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="173.1179" y1="323.7658" x2="208.4179" y2="292.8058" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><path style="fill:url(#SVGID_11_);" d="M132.467,146.997c-0.963-0.963-2.226-1.445-3.488-1.445c-0.315,0-0.631,0.03-0.942,0.09  c-0.933,0.181-1.823,0.631-2.545,1.354c-0.963,0.963-1.445,2.226-1.445,3.488c0,0.315,0.03,0.631,0.09,0.942  c0.181,0.933,0.631,1.823,1.354,2.545l25.574,25.574l0,0l0,0c0.044,0.044,0.096,0.073,0.142,0.115  c0.45,0.418,0.951,0.749,1.49,0.968c0.593,0.241,1.225,0.361,1.856,0.361c1.262,0,2.525-0.482,3.488-1.445  c0.722-0.722,1.174-1.613,1.354-2.545c0.06-0.311,0.09-0.626,0.09-0.942c0-1.262-0.482-2.525-1.445-3.488L132.467,146.997z"></path><linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="313.9106" y1="211.3143" x2="227.5306" y2="306.1943" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#C3C3C3;stop-opacity:0"></stop><stop offset="0.267" style="stop-color:#A4A4A4;stop-opacity:0.267"></stop><stop offset="0.542" style="stop-color:#8B8B8B;stop-opacity:0.542"></stop><stop offset="0.794" style="stop-color:#7C7C7C;stop-opacity:0.794"></stop><stop offset="1" style="stop-color:#777777"></stop>
-</linearGradient><path style="fill:url(#SVGID_12_);" d="M416.438,343.402c-2.521,5.341-5.279,10.544-8.271,15.599  c-5.961,10.147-12.792,19.71-20.418,28.59c-7.973,9.302-16.792,17.86-26.33,25.56L221.771,273.679  c-8.408-8.396-8.408-22.008,0-30.404c0.372-0.372,0.745-0.721,1.142-1.056c8.047-7.004,20.07-7.004,28.118,0  c0.398,0.335,0.77,0.683,1.142,1.056c0.372,0.372,0.745,0.77,1.068,1.168h0.012c0.248,0.012,0.497,0.025,0.77,0.037  c0.472,0.037,0.994,0.062,1.552,0.099c2.931,0.186,6.943,0.497,11.6,0.919c1.391,0.124,2.844,0.261,4.347,0.41  c1.08,0.111,2.186,0.211,3.316,0.335c0.957,0.099,1.926,0.199,2.918,0.298c0.72,0.074,1.453,0.162,2.186,0.236  c1.168,0.124,2.335,0.261,3.515,0.398c5.614,0.646,11.426,1.378,16.977,2.199c0.758,0.111,1.515,0.224,2.261,0.347  c0.111,0.012,0.236,0.025,0.347,0.05c0.869,0.137,1.727,0.273,2.571,0.398c0.844,0.149,1.677,0.286,2.497,0.422  c0.546,0.099,1.093,0.187,1.639,0.286c0.832,0.149,1.664,0.298,2.484,0.46c0.41,0.074,0.82,0.149,1.217,0.224  c0.844,0.174,1.651,0.335,2.447,0.497c0.248,0.05,0.485,0.099,0.721,0.149c0.323,0.074,0.646,0.15,0.957,0.211  c0.149,0.025,0.298,0.062,0.447,0.099c0.46,0.111,0.919,0.211,1.353,0.31c0.31,0.074,0.608,0.15,0.894,0.211  c1.155,0.298,2.236,0.583,3.254,0.869c0.236,0.074,0.472,0.149,0.696,0.211c0.187,0.05,0.36,0.111,0.534,0.162  c0.261,0.087,0.509,0.174,0.758,0.249c0.087,0.025,0.174,0.049,0.261,0.087c0.497,0.174,0.957,0.335,1.391,0.509  c0.037,0.012,0.074,0.037,0.124,0.049c0.236,0.099,0.472,0.199,0.696,0.286c0.534,0.236,1.006,0.46,1.429,0.696  c0.187,0.111,0.347,0.211,0.509,0.31c0.521,0.335,0.919,0.671,1.18,1.006c0.087,0.087,0.149,0.187,0.199,0.273  c0.012,0.025,0.025,0.037,0.025,0.05c0.062,0.111,0.111,0.224,0.137,0.347c0.037,0.111,0.049,0.224,0.049,0.335L416.438,343.402z"></path><linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="303.5925" y1="262.181" x2="0.3025" y2="232.171" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#FFB92D"></stop><stop offset="1" style="stop-color:#F59500"></stop>
-</linearGradient><path style="fill:url(#SVGID_13_);" d="M251.077,272.58c-7.789,0-14.104-6.315-14.104-14.104c0-7.789,6.315-14.104,14.104-14.104  c7.789,0,80.429,6.315,80.429,14.104C331.507,266.266,258.866,272.58,251.077,272.58z"></path><linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="264.1326" y1="199.9339" x2="294.1426" y2="86.7139" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#FFB92D"></stop><stop offset="1" style="stop-color:#F59500"></stop>
-</linearGradient><path style="fill:url(#SVGID_14_);" d="M251.077,244.372c0,7.789-6.315,14.104-14.104,14.104s-14.104-6.315-14.104-14.104  c0-7.789,6.315-120.381,14.104-120.381C244.762,123.992,251.077,236.583,251.077,244.372z"></path><linearGradient id="SVGID_15_" gradientUnits="userSpaceOnUse" x1="235.8586" y1="267.0425" x2="235.8586" y2="236.0825" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#A7F3CE"></stop><stop offset="1" style="stop-color:#61DB99"></stop>
-</linearGradient><circle style="fill:url(#SVGID_15_);" cx="236.976" cy="258.479" r="21.504"></circle><linearGradient id="SVGID_16_" gradientUnits="userSpaceOnUse" x1="307.8288" y1="98.3728" x2="189.9988" y2="216.2028" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#C3C3C3;stop-opacity:0"></stop><stop offset="0.267" style="stop-color:#A4A4A4;stop-opacity:0.267"></stop><stop offset="0.542" style="stop-color:#8B8B8B;stop-opacity:0.542"></stop><stop offset="0.794" style="stop-color:#7C7C7C;stop-opacity:0.794"></stop><stop offset="1" style="stop-color:#777777"></stop>
-</linearGradient><path style="fill:url(#SVGID_16_);" d="M227.108,428.649c-6.123,8.057-9.184,16.304-9.184,24.739v2.678  c6.269,0.597,12.621,0.914,19.048,0.914c47.12,0,90.403-16.419,124.445-43.829c9.538-7.7,18.357-16.258,26.33-25.56  c3.221-3.751,6.291-7.63,9.222-11.616l-75.603-75.549c-11.729-10.459-25.944-15.687-42.644-15.687  c-15.763,0-29.321,4.644-40.672,13.932c-11.355,9.288-17.029,21.251-17.029,35.887c0,7.248,1.943,12.106,5.801,14.61l42.835,43.049  l-19.926,14.504C240.773,413.284,233.23,420.592,227.108,428.649z"></path><g><linearGradient id="SVGID_17_" gradientUnits="userSpaceOnUse" x1="277.8646" y1="173.7625" x2="277.8646" y2="54.8725" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#62E1FB"></stop><stop offset="1" style="stop-color:#00A2F3"></stop>
-</linearGradient><path style="fill:url(#SVGID_17_);" d="M217.925,480.656v-27.268c0-8.436,3.061-16.681,9.184-24.739   c6.121-8.057,13.664-15.366,22.623-21.928l27.021-19.668c9.008-6.554,16.651-13.766,22.941-21.634   c6.285-7.863,9.429-15.732,9.429-23.6c0-7.863-2.581-14.747-7.74-20.649c-5.163-5.897-12.714-8.848-22.659-8.848   c-8.444,0-15.296,2.331-20.546,6.987c-5.257,4.659-7.882,11.55-7.882,20.676c0,2.983-1.456,5.594-4.363,7.829   c-2.91,2.235-6.711,3.352-11.4,3.352c-9.007,0-13.51-5.534-13.51-16.608c0-14.636,5.674-26.598,17.029-35.887   c11.351-9.288,24.909-13.932,40.672-13.932c16.699,0,30.915,5.227,42.644,15.686c11.724,10.459,17.592,23.973,17.592,40.553   c0,11.241-3.144,21.775-9.429,31.608c-6.29,9.834-13.889,18.169-22.8,25.003c-8.915,6.839-17.829,13.299-26.739,19.386   c-8.915,6.087-16.513,12.222-22.799,18.402c-6.29,6.184-9.429,12.178-9.429,17.983v10.674h82.752c2.626,0,4.925,1.267,6.896,3.8   c1.971,2.534,2.957,5.587,2.957,9.149c0,3.567-0.981,6.711-2.938,9.429c-1.957,2.723-4.24,4.083-6.848,4.083h-99.519   c-2.982,0-5.92-0.938-8.804-2.811C219.368,485.81,217.925,483.47,217.925,480.656z"></path><linearGradient id="SVGID_18_" gradientUnits="userSpaceOnUse" x1="406.4156" y1="173.7625" x2="406.4156" y2="54.8725" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#62E1FB"></stop><stop offset="1" style="stop-color:#00A2F3"></stop>
-</linearGradient><path style="fill:url(#SVGID_18_);" d="M341.493,433.183c0-2.058,0.563-4.12,1.69-6.183l68.116-134.108   c2.815-5.435,7.129-8.152,12.948-8.152c3.187,0,6.474,1.124,9.851,3.377c3.377,2.253,5.067,4.973,5.067,8.163   c0,1.125-0.472,2.629-1.409,4.504l-57.982,115.683h41.376v-39.066c0-6.607,4.969-9.909,14.918-9.909   c4.125,0,7.643,0.853,10.555,2.551c2.907,1.698,4.363,4.151,4.363,7.359v39.066h13.792c3.188,0,5.672,1.395,7.458,4.183   c1.781,2.788,2.674,6.039,2.674,9.75c0,3.342-1.034,6.456-3.097,9.332c-2.066,2.88-4.411,4.319-7.036,4.319h-13.792v36.529   c0,3.026-1.504,5.432-4.504,7.227c-3.005,1.793-6.474,2.688-10.415,2.688c-4.129,0-7.648-0.893-10.555-2.688   c-2.912-1.795-4.363-4.201-4.363-7.227v-36.529h-69.241c-3.005,0-5.489-0.972-7.458-2.924   C342.479,439.174,341.493,436.526,341.493,433.183z"></path>
-</g><linearGradient id="SVGID_19_" gradientUnits="userSpaceOnUse" x1="303.0963" y1="189.7602" x2="416.3163" y2="76.5402" gradientTransform="matrix(1.0039 0 0 -1.0039 0.1922 516.5599)"><stop offset="0" style="stop-color:#FFB92D"></stop><stop offset="1" style="stop-color:#F59500"></stop>
-</linearGradient><path style="fill:url(#SVGID_19_);" d="M495.309,224.493h-22.755h-1.056C454.964,109.869,356.102,21.505,236.973,21.505  C106.305,21.505,0,127.809,0,258.476c0,53.917,18.597,106.688,52.365,148.591c33.259,41.272,79.869,70.515,131.243,82.344  c1.406,0.325,2.811,0.479,4.196,0.479c8.483,0,16.153-5.834,18.138-14.453c2.308-10.027-3.948-20.025-13.976-22.333  c-43.272-9.964-82.546-34.615-110.59-69.414c-28.862-35.815-44.117-79.112-44.117-125.212c0-110.123,89.591-199.713,199.714-199.713  c98.54,0,180.628,71.738,196.808,165.729H414.13c-14.841,0-22.273,17.943-11.779,28.436l40.59,40.59  c6.505,6.505,17.053,6.505,23.558,0l40.59-40.59C517.582,242.436,510.149,224.493,495.309,224.493z"></path></svg></span>
-                <h2 class="u-custom-font u-font-roboto-condensed u-text u-text-body-alt-color u-text-7">horaires</h2>
-                <p class="u-text u-text-body-alt-color u-text-8"> Du
-lundi au dimanche:<br>&nbsp;de 08&nbsp;: 00 à 22&nbsp;: 00
+                <h4 class="u-text u-text-default u-text-palette-1-base u-text-6">Horaires</h4>
+                <p class="u-custom-item u-text u-text-palette-1-dark-2 u-text-7">Du
+lundi au dimanche:<br>&nbsp;De 08&nbsp;: 00 à 22&nbsp;: 00
                 </p>
               </div>
             </div>
@@ -199,7 +197,7 @@ lundi au dimanche:<br>&nbsp;de 08&nbsp;: 00 à 22&nbsp;: 00
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-section-2" id="carousel_8619">
+    <section class="u-clearfix u-section-3" id="carousel_8619">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-4 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
@@ -230,172 +228,15 @@ lundi au dimanche:<br>&nbsp;de 08&nbsp;: 00 à 22&nbsp;: 00
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-image u-parallax u-shading u-section-3" id="carousel_266d" data-image-width="1280" data-image-height="853">
-      <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h2 class="u-align-center u-text u-text-custom-color-3 u-text-2">Prendre Rendez-Vous</h2>
-        
-
-                    {{-- <form method="POST" action="{{ route("rdv") }}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('date_rendez_vous') ? 'has-error' : '' }}">
-                                    <label class="required" for="date_rendez_vous">{{ trans('cruds.testCovid.fields.date_rendez_vous') }}</label>
-                                    <input class="form-control date" type="text" name="date_rendez_vous" id="date_rendez_vous" value="{{ old('date_rendez_vous') }}" required>
-                                    @if($errors->has('date_rendez_vous'))
-                                        <span class="help-block" role="alert">{{ $errors->first('date_rendez_vous') }}</span>
-                                    @endif
-                                    <span class="help-block">{{ trans('cruds.testCovid.fields.date_rendez_vous_helper') }}</span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('date_voyage') ? 'has-error' : '' }}">
-                                    <label class="required" for="date_voyage">{{ trans('cruds.testCovid.fields.date_voyage') }}</label>
-                                    <input class="form-control date" type="text" name="date_voyage" id="date_voyage" value="{{ old('date_voyage') }}" required>
-                                    @if($errors->has('date_voyage'))
-                                        <span class="help-block" role="alert">{{ $errors->first('date_voyage') }}</span>
-                                    @endif
-                                    <span class="help-block">{{ trans('cruds.testCovid.fields.date_voyage_helper') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('nom') ? 'has-error' : '' }}">
-                                    <label class="required" for="nom">{{ trans('cruds.testCovid.fields.nom') }}</label>
-                                    <input class="form-control" type="text" name="nom" id="nom" value="{{ old('nom', '') }}" required>
-                                    @if($errors->has('nom'))
-                                        <span class="help-block" role="alert">{{ $errors->first('nom') }}</span>
-                                    @endif
-                                    <span class="help-block">{{ trans('cruds.testCovid.fields.nom_helper') }}</span>
-                                </div>
-                                
-                            </div>
-                            <div class="col-lg-6"><div class="form-group {{ $errors->has('prenoms') ? 'has-error' : '' }}">
-                                <label for="prenoms">{{ trans('cruds.testCovid.fields.prenoms') }}</label>
-                                <input class="form-control" type="text" name="prenoms" id="prenoms" value="{{ old('prenoms', '') }}">
-                                @if($errors->has('prenoms'))
-                                    <span class="help-block" role="alert">{{ $errors->first('prenoms') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.prenoms_helper') }}</span>
-                            </div></div>
-                        </div>
-
-                        <div class="col-lg-12">
-                            <div class="col-lg-6"> <div class="form-group {{ $errors->has('date_naissance') ? 'has-error' : '' }}">
-                                <label class="required" for="date_naissance">{{ trans('cruds.testCovid.fields.date_naissance') }}</label>
-                                <input class="form-control date" type="text" name="date_naissance" id="date_naissance" value="{{ old('date_naissance') }}" required>
-                                @if($errors->has('date_naissance'))
-                                    <span class="help-block" role="alert">{{ $errors->first('date_naissance') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.date_naissance_helper') }}</span>
-                            </div></div>
-                            <div class="col-lg-6"> <div class="form-group {{ $errors->has('telephone') ? 'has-error' : '' }}">
-                                <label class="required" for="telephone">{{ trans('cruds.testCovid.fields.telephone') }}</label>
-                                <input class="form-control" type="number" name="telephone" id="telephone" value="{{ old('telephone', '') }}" step="1" required>
-                                @if($errors->has('telephone'))
-                                    <span class="help-block" role="alert">{{ $errors->first('telephone') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.telephone_helper') }}</span>
-                            </div></div>
-                        </div>
-                        
-
-                        
-                        <div class="col-lg-12">
-                            <div class="col-lg-6"><div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                <label for="email">{{ trans('cruds.testCovid.fields.email') }}</label>
-                                <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}" required>
-                                @if($errors->has('email'))
-                                    <span class="help-block" role="alert">{{ $errors->first('email') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.email_helper') }}</span>
-                            </div></div>
-                            <div class="col-lg-6"><div class="form-group {{ $errors->has('adresse') ? 'has-error' : '' }}">
-                                <label for="adresse">{{ trans('cruds.testCovid.fields.adresse') }}</label>
-                                <input class="form-control" type="text" name="adresse" id="adresse" value="{{ old('adresse', '') }}">
-                                @if($errors->has('adresse'))
-                                    <span class="help-block" role="alert">{{ $errors->first('adresse') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.adresse_helper') }}</span>
-                            </div></div>
-                        </div>
-
-                        <div class="col-lg-12">
-                            <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('heure_rendez_vous') ? 'has-error' : '' }}">
-                                    <label class="required" for="heure_rendez_vous">{{ trans('cruds.testCovid.fields.heure_rendez_vous') }}</label>
-                                    <input class="form-control timepicker" type="text" name="heure_rendez_vous" id="heure_rendez_vous" value="{{ old('heure_rendez_vous') }}" required>
-                                    @if($errors->has('heure_rendez_vous'))
-                                        <span class="help-block" role="alert">{{ $errors->first('heure_rendez_vous') }}</span>
-                                    @endif
-                                    <span class="help-block">{{ trans('cruds.testCovid.fields.heure_rendez_vous_helper') }}</span>
-                                </div></div>
-                            <div class="col-lg-6">
-                                <div class="form-group {{ $errors->has('destination') ? 'has-error' : '' }}">
-                                    <label class="required" for="destination">{{ trans('cruds.testCovid.fields.destination') }}</label>
-                                    <input class="form-control" type="text" name="destination" id="destination" value="{{ old('destination', '') }}" required>
-                                    @if($errors->has('destination'))
-                                        <span class="help-block" role="alert">{{ $errors->first('destination') }}</span>
-                                    @endif
-                                    <span class="help-block">{{ trans('cruds.testCovid.fields.destination_helper') }}</span>
-                                </div></div>
-                        </div>
-
-
-
-                        <div class="col-lg-12">
-
-                            <div class="col-lg-6"><div class="form-group {{ $errors->has('heure_voyage') ? 'has-error' : '' }}">
-                                <label for="heure_voyage">{{ trans('cruds.testCovid.fields.heure_voyage') }}</label>
-                                <input class="form-control timepicker" type="text" name="heure_voyage" id="heure_voyage" value="{{ old('heure_voyage') }}">
-                                @if($errors->has('heure_voyage'))
-                                    <span class="help-block" role="alert">{{ $errors->first('heure_voyage') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.heure_voyage_helper') }}</span>
-                            </div></div>
-                            <div class="col-lg-6"><div class="form-group {{ $errors->has('sexe') ? 'has-error' : '' }}">
-                                <label>{{ trans('cruds.testCovid.fields.sexe') }}</label>
-                                @foreach(App\Models\TestCovid::SEXE_RADIO as $key => $label)
-                                    <div>
-                                        <input type="radio" id="sexe_{{ $key }}" name="sexe" value="{{ $key }}" {{ old('sexe', '') === (string) $key ? 'checked' : '' }}>
-                                        <label for="sexe_{{ $key }}" style="font-weight: 400">{{ $label }}</label>
-                                    </div>
-                                @endforeach
-                                @if($errors->has('sexe'))
-                                    <span class="help-block" role="alert">{{ $errors->first('sexe') }}</span>
-                                @endif
-                                <span class="help-block">{{ trans('cruds.testCovid.fields.sexe_helper') }}</span>
-                            </div></div>
-                        </div>
-                        <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
-                            <label for="message">{{ trans('cruds.testCovid.fields.message') }}</label>
-                            <textarea class="form-control" name="message" id="message">{{ old('message') }}</textarea>
-                            @if($errors->has('message'))
-                                <span class="help-block" role="alert">{{ $errors->first('message') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.testCovid.fields.message_helper') }}</span>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-danger" type="submit">
-                                Valider
-                            </button>
-                        </div>
-                    </form> --}}
-
-                    <div class="col-lg-12">
-                        <div class="btn btn-lg btn-info">
-                            <span class="glyphicon glyphicon-book"></span>  <a href="{{ route('rendez-vous') }}">Prendre Rendez Vous</a>
-                        </div>
-                        
-                    </div>
-                 
-      </div>
-    </section>
+    <section class="u-clearfix u-image u-shading u-section-4" src="" data-image-width="1280" data-image-height="854" id="sec-b552">
+        <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+          <a href="{{ route('rendez-vous') }}" class="u-border-none u-btn u-btn-round u-button-style u-hover-custom-color-2 u-palette-1-base u-radius-50 u-btn-1" data-animation-name="rubberBand" data-animation-duration="1500" data-animation-delay="0" data-animation-direction="">Je Prends rendez-vous</a><span class="u-hidden-xs u-icon u-icon-circle u-icon-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Left"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 490.667 490.667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e342"></use></svg><svg class="u-svg-content" viewBox="0 0 490.667 490.667" x="0px" y="0px" id="svg-e342" style="enable-background:new 0 0 490.667 490.667;"><path style="fill:#009688;" d="M245.333,0C109.839,0,0,109.839,0,245.333s109.839,245.333,245.333,245.333  s245.333-109.839,245.333-245.333C490.514,109.903,380.764,0.153,245.333,0z"></path><path style="fill:#FAFAFA;" d="M290.133,104.533c-19.139-18.289-49.277-18.289-68.416,0c-18.893,18.881-18.902,49.503-0.021,68.395  c0.007,0.007,0.014,0.014,0.021,0.021l19.2,19.2H117.333C87.878,192.149,64,216.027,64,245.483  c0,29.455,23.878,53.333,53.333,53.333h123.584l-19.2,19.2c-17.522,20.175-15.371,50.734,4.804,68.257  c18.259,15.858,45.423,15.799,63.612-0.139l118.251-118.251c12.492-12.496,12.492-32.752,0-45.248L290.133,104.533z"></path></svg></span>
+        </div>
+      </section>
     
     
-    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer" id="sec-6127"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="https://agromedconsulting.com" class="u-image u-logo u-image-1" data-image-width="413" data-image-height="92">
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer" id="sec-6127"><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="/" class="u-image u-logo u-image-1" data-image-width="413" data-image-height="92">
           <img src="images/logo2.PNG" class="u-logo-image u-logo-image-1">
         </a><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.994 511.994" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8f41"></use></svg><svg class="u-svg-content" viewBox="0 0 511.994 511.994" id="svg-8f41"><g><g><path d="m124.939 290.066 97.485 97.485c7.798 7.798 20.493 7.798 28.283.008l15.812-15.812 59.717 25.188 24.134 58.663-15.812 15.812c-54.117 54.117-141.867 54.109-195.984-.008l-97.485-97.485c-54.126-54.126-54.126-141.867-.008-195.984l15.812-15.812 59.19 24.661 24.661 59.19-15.812 15.812c-7.792 7.789-7.792 20.484.007 28.282z" fill="#9dc6fb"></path><path d="m349.373 453.156.998 2.44-15.814 15.814c-54.117 54.117-141.867 54.109-195.984-.008l-97.485-97.485c-54.126-54.126-54.126-141.867-.008-195.984l15.814-15.814 2.432 1.006c-36.777 53.933-31.226 128.074 16.628 175.927l97.485 97.485c47.852 47.854 122.002 53.396 175.934 16.619z" fill="#80b4fb"></path><path d="m59.053 129.754c-9.535 9.535-9.535 24.994 0 34.529l79.528 79.528c9.535 9.535 24.994 9.535 34.529 0 9.535-9.535 9.535-24.994 0-34.529l-79.528-79.528c-9.535-9.535-24.995-9.535-34.529 0z" fill="#f9f6f9"></path><path d="m269.206 339.907c-9.535 9.535-9.535 24.994 0 34.529l79.528 79.528c9.535 9.535 24.994 9.535 34.529 0 9.535-9.535 9.535-24.994 0-34.529l-79.528-79.528c-9.535-9.535-24.994-9.535-34.529 0z" fill="#f9f6f9"></path><g fill="#dddaec"><path d="m339.015 375.186 44.248 44.248c4.771 4.771 7.144 11.018 7.153 17.265 0 6.255-2.39 12.502-7.152 17.265-9.534 9.534-24.996 9.534-34.53 0l-44.248-44.248c9.534 9.534 24.996 9.534 34.53 0 4.763-4.763 7.144-11.018 7.152-17.265-.009-6.247-2.39-12.502-7.153-17.265z"></path><path d="m128.861 165.033 44.248 44.248c4.771 4.771 7.144 11.018 7.153 17.265 0 6.255-2.39 12.502-7.152 17.265-9.534 9.534-24.996 9.534-34.53 0l-44.248-44.248c9.534 9.534 24.996 9.534 34.53 0 4.763-4.763 7.144-11.018 7.152-17.265-.009-6.247-2.39-12.502-7.153-17.265z"></path>
 </g>
@@ -413,19 +254,19 @@ lundi au dimanche:<br>&nbsp;de 08&nbsp;: 00 à 22&nbsp;: 00
         <ul class="u-custom-list u-text u-text-1">
           <li>
             <div class="u-list-icon">
-              <svg class="u-svg-content" viewBox="0 0 24 24" id="svg-e50a"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 24 24" id="svg-e50a"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
             </div>781824340&nbsp;&nbsp;<br>
           </li>
           <li>
             <div class="u-list-icon">
-              <svg class="u-svg-content" viewBox="0 0 24 24" id="svg-e50a"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 24 24" id="svg-e50a"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
             </div>781746058&nbsp;&nbsp;
           </li>
         </ul><span class="u-icon u-icon-circle u-text-palette-1-base u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a74b"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-a74b" style="enable-background:new 0 0 512 512;"><rect x="64" y="64" style="fill:#ECEFF1;" width="384" height="384"></rect><polygon style="fill:#CFD8DC;" points="256,296.384 448,448 448,148.672 "></polygon><path style="fill:#F44336;" d="M464,64h-16L256,215.616L64,64H48C21.504,64,0,85.504,0,112v288c0,26.496,21.504,48,48,48h16V148.672  l192,147.68L448,148.64V448h16c26.496,0,48-21.504,48-48V112C512,85.504,490.496,64,464,64z"></path></svg></span>
         <p class="u-small-text u-text u-text-variant u-text-2">
-          <a href="mailto:agromedconsulting@gmail.com" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1">agromedconsulting@gmail.com</a>
+          <a href="mailto:agromedconsulting@gmail.com" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-1">testcovid@agromedconsulting.com</a>
         </p>
-        <a href="mailto:agromedconsulting@gmail.com" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-2">Tous droits réservés @&nbsp; Agromed Consulting</a>
+        <a href="mailto:agromedconsulting@gmail.com" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-black u-btn-2">Tous droits réservés @&nbsp;Agromed Consulting</a>
       </div></footer><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: linear-gradient(#478ac9, #a9c840); right: 20px; bottom: 20px;" class="u-back-to-top u-gradient u-icon u-icon-circle u-opacity u-opacity-95 u-spacing-12" data-href="#">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
         <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
