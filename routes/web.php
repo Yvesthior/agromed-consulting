@@ -1,7 +1,47 @@
 <?php
 
+use Illuminate\Http\Request;
+
+use App\Models\TestCovid1;
+
 Route::view('/', 'welcome');
 Auth::routes(['register' => false]);
+
+/* 
+Route::post('rendezvous/new', 'TestCovidControllerRV@storerv')->name('prv');
+
+ */
+
+Route::get('/rendez-vous', 'TestCovidControllerRV@rdv')->name('rendez-vous');
+Route::get('/rvsuccess', 'TestCovidControllerRV@success')->name('succes');
+
+Route::post('/rdv', function (Request $request) {
+    $data = new TestCovid1();
+    $data->date_rendez_vous = $request['date_rendez_vous'];
+    $data->date_voyage = $request['date_voyage'];
+    $data->nom = $request['nom'];
+    $data->prenoms = $request['prenoms'];
+    $data->nom_complet = $request['prenoms'] . ' ' . $request['nom'];
+    $data->sexe = $request['sexe'];
+    $data->telephone = $request['telephone'];
+    $data->date_naissance = $request['date_naissance'];
+    $data->email = $request['email'];
+    $data->adresse = $request['adresse'];
+    $data->heure_rendez_vous = $request['heure_rendez_vous'];
+    $data->destination = $request['destination'];
+    $data->heure_voyage = $request['heure_voyage'];
+    $data->message = $request['message'];
+    $data->statut = $request['statut'];
+
+    $data->save();
+    
+
+    var_dump($data);
+
+   return redirect()->route('succes');/*  */
+ })->name('rdv');
+
+
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', '2fa', 'admin']], function () {
     Route::get('/', 'HomeController@index')->name('home');
