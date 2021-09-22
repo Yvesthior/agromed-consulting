@@ -78,13 +78,6 @@ class TestCovidController extends Controller
         return redirect()->route('admin.test-covids.index');
     }
 
-    public function storerv(StoreTestCovidRequest $request)
-    {
-        $testCovid = TestCovid::create($request->all());
-/* 
-        return redirect()->route('/'); */
-    }
-
     public function edit(TestCovid $testCovid)
     {
         abort_if(Gate::denies('test_covid_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
