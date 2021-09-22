@@ -98,25 +98,38 @@
                     <span>{{ trans('global.systemCalendar') }}</span>
                 </a>
             </li>
-            @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
-                @can('profile_password_edit')
-                    <li class="{{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}">
-                        <a href="{{ route('profile.password.edit') }}">
-                            <i class="fa-fw fas fa-key">
-                            </i>
-                            {{ trans('global.change_password') }}
-                        </a>
-                    </li>
-                @endcan
-            @endif
-            <li>
-                <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
-                    <i class="fas fa-fw fa-sign-out-alt">
+            @php($unread = \App\Models\QaTopic::unreadCount())
+                <li class="{{ request()->is("admin/messenger") || request()->is("admin/messenger/*") ? "active" : "" }}">
+                    <a href="{{ route("admin.messenger.index") }}">
+                        <i class="fa-fw fa fa-envelope">
 
-                    </i>
-                    {{ trans('global.logout') }}
-                </a>
-            </li>
+                        </i>
+                        <span>{{ trans('global.messages') }}</span>
+                        @if($unread > 0)
+                            <strong>( {{ $unread }} )</strong>
+                        @endif
+
+                    </a>
+                </li>
+                @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
+                    @can('profile_password_edit')
+                        <li class="{{ request()->is('profile/password') || request()->is('profile/password/*') ? 'active' : '' }}">
+                            <a href="{{ route('profile.password.edit') }}">
+                                <i class="fa-fw fas fa-key">
+                                </i>
+                                {{ trans('global.change_password') }}
+                            </a>
+                        </li>
+                    @endcan
+                @endif
+                <li>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                        <i class="fas fa-fw fa-sign-out-alt">
+
+                        </i>
+                        {{ trans('global.logout') }}
+                    </a>
+                </li>
         </ul>
     </section>
 </aside>
