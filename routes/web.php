@@ -1,7 +1,64 @@
 <?php
+use Illuminate\Http\Request;
+use App\Models\TestCovid1;
+use Illuminate\Support\Facades\Http;
 
 Route::view('/', 'welcome');
 Auth::routes(['register' => false]);
+
+Route::get('/rendez-vous', 'TestCovidControllerRV@rdv')->name('rendez-vous');
+Route::get('/rvsuccess', 'TestCovidControllerRV@success')->name('succes');
+Route::post('/rdv', function (Request $request) {
+    $data = new TestCovid1();
+    $data->date_rendez_vous = $request['date_rendez_vous'];
+    $data->date_voyage = $request['date_voyage'];
+    $data->nom = $request['nom'];
+    $data->prenoms = $request['prenoms'];
+    $data->nom_complet = $request['prenoms'] . ' ' . $request['nom'];
+    $data->sexe = $request['sexe'];
+    $data->telephone = $request['telephone'];
+    $data->date_naissance = $request['date_naissance'];
+    $data->email = $request['email'];
+    $data->adresse = $request['adresse'];
+    $data->heure_rendez_vous = $request['heure_rendez_vous'];
+    $data->destination = $request['destination'];
+    $data->heure_voyage = $request['heure_voyage'];
+    $data->message = $request['message'];
+    $data->statut = "A Venir";
+/* 
+    $response = Http::withHeaders([
+        'X-First' => 'foo',
+        'X-Second' => 'bar'
+    ])->post('http://example.com/users', [
+        'name' => 'Taylor',
+    ]); */
+
+    $login= Http::post('http://41.219.0.108/sms-api-itca/public/api/login?', [
+        'email' => 'yvesthior@gmail.com',
+        'password' => 'Itca@agomed123!',
+    ]);
+    
+    $token = json_decode($login->body());
+    $bearer = $token->bearer_token;
+    $sexeS = $data->sexe === "Homme" ? "Mr" : "Mme" ;
+   
+    $response = Http::accept('application/json')->get('http://41.219.0.108/sms-api-itca/public/api/send?');
+    $response = Http::withToken($bearer)
+    ->post('http://41.219.0.108/sms-api-itca/public/api/send?', [
+        'from' => 'Agromed',
+        'to' => $data->telephone,
+        'message' => 'Bonjour '. $sexeS. ' '.  $data->nom_complet. ',
+Votre demande de rendez-vous pour la date du '. $data->date_rendez_vous . ' a bien été prise en compte, vous serez contacté par un préleveur pour la suite. 
+Bien à vous,
+Agromed Consulting'
+    ]);
+
+
+    $data->save();
+
+    // var_dump($response->body());
+    return redirect()->route('succes');/*  */
+    })->name('rdv');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', '2fa', 'admin']], function () {
     Route::get('/', 'HomeController@index')->name('home');
