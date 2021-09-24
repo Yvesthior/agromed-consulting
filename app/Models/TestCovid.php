@@ -24,7 +24,7 @@ class TestCovid extends Model
         'Effectue' => 'Effectué',
         'Reporte'  => 'Reporté',
         'Annule'   => 'Annulé',
-        'A venir'  => 'A venir',
+        'Programmé'  => 'Programmé',
     ];
 
     public $table = 'test_covids';

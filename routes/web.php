@@ -24,7 +24,7 @@ Route::post('/rdv', function (Request $request) {
     $data->destination = $request['destination'];
     $data->heure_voyage = $request['heure_voyage'];
     $data->message = $request['message'];
-    $data->statut = "A Venir";
+    $data->statut = "Programmé";
 /* 
     $response = Http::withHeaders([
         'X-First' => 'foo',
