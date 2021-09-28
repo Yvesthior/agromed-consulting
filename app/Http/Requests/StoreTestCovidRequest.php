@@ -33,6 +33,9 @@ class StoreTestCovidRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'statut' => [
+                'required',
+            ],
             'telephone' => [
                 'required',
                 'integer',
@@ -53,9 +56,6 @@ class StoreTestCovidRequest extends FormRequest
             ],
             'destination' => [
                 'string',
-                'required',
-            ],
-            'statut' => [
                 'required',
             ],
             'heure_voyage' => [

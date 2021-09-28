@@ -39,10 +39,40 @@
                                         {{ trans('cruds.testCovid.fields.prenoms') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.testCovid.fields.statut') }}
+                                    </th>
+                                    <th>
                                         {{ trans('cruds.testCovid.fields.telephone') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.testCovid.fields.statut') }}
+                                        {{ trans('cruds.testCovid.fields.sexe') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.date_naissance') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.email') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.adresse') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.heure_rendez_vous') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.destination') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.heure_voyage') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.message') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.nom_complet') }}
+                                    </th>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.resultat') }}
                                     </th>
                                     <th>
                                         &nbsp;
@@ -62,12 +92,49 @@
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
+                                        <select class="search" strict="true">
+                                            <option value>{{ trans('global.all') }}</option>
+                                            @foreach(App\Models\TestCovid::STATUT_SELECT as $key => $item)
+                                                <option value="{{ $item }}">{{ $item }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
                                         <select class="search" strict="true">
                                             <option value>{{ trans('global.all') }}</option>
-                                            @foreach(App\Models\TestCovid::STATUT_SELECT as $key => $item)
+                                            @foreach(App\Models\TestCovid::SEXE_RADIO as $key => $item)
+                                                <option value="{{ $item }}">{{ $item }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                    </td>
+                                    <td>
+                                        <select class="search" strict="true">
+                                            <option value>{{ trans('global.all') }}</option>
+                                            @foreach(App\Models\TestCovid::RESULTAT_SELECT as $key => $item)
                                                 <option value="{{ $item }}">{{ $item }}</option>
                                             @endforeach
                                         </select>
@@ -92,10 +159,40 @@
                                             {{ $testCovid->prenoms ?? '' }}
                                         </td>
                                         <td>
+                                            {{ App\Models\TestCovid::STATUT_SELECT[$testCovid->statut] ?? '' }}
+                                        </td>
+                                        <td>
                                             {{ $testCovid->telephone ?? '' }}
                                         </td>
                                         <td>
-                                            {{ App\Models\TestCovid::STATUT_SELECT[$testCovid->statut] ?? '' }}
+                                            {{ App\Models\TestCovid::SEXE_RADIO[$testCovid->sexe] ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->date_naissance ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->email ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->adresse ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->heure_rendez_vous ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->destination ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->heure_voyage ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->message ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $testCovid->nom_complet ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ App\Models\TestCovid::RESULTAT_SELECT[$testCovid->resultat] ?? '' }}
                                         </td>
                                         <td>
                                             @can('test_covid_show')

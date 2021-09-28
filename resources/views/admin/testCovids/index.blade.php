@@ -40,10 +40,40 @@
                                     {{ trans('cruds.testCovid.fields.prenoms') }}
                                 </th>
                                 <th>
+                                    {{ trans('cruds.testCovid.fields.statut') }}
+                                </th>
+                                <th>
                                     {{ trans('cruds.testCovid.fields.telephone') }}
                                 </th>
                                 <th>
-                                    {{ trans('cruds.testCovid.fields.statut') }}
+                                    {{ trans('cruds.testCovid.fields.sexe') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.date_naissance') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.email') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.adresse') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.heure_rendez_vous') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.destination') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.heure_voyage') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.message') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.nom_complet') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.testCovid.fields.resultat') }}
                                 </th>
                                 <th>
                                     &nbsp;
@@ -63,12 +93,49 @@
                                     <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                 </td>
                                 <td>
+                                    <select class="search" strict="true">
+                                        <option value>{{ trans('global.all') }}</option>
+                                        @foreach(App\Models\TestCovid::STATUT_SELECT as $key => $item)
+                                            <option value="{{ $key }}">{{ $item }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
                                     <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                 </td>
                                 <td>
                                     <select class="search" strict="true">
                                         <option value>{{ trans('global.all') }}</option>
-                                        @foreach(App\Models\TestCovid::STATUT_SELECT as $key => $item)
+                                        @foreach(App\Models\TestCovid::SEXE_RADIO as $key => $item)
+                                            <option value="{{ $key }}">{{ $item }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                </td>
+                                <td>
+                                    <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                </td>
+                                <td>
+                                    <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                                </td>
+                                <td>
+                                    <select class="search" strict="true">
+                                        <option value>{{ trans('global.all') }}</option>
+                                        @foreach(App\Models\TestCovid::RESULTAT_SELECT as $key => $item)
                                             <option value="{{ $key }}">{{ $item }}</option>
                                         @endforeach
                                     </select>
@@ -135,8 +202,18 @@
 { data: 'date_voyage', name: 'date_voyage' },
 { data: 'nom', name: 'nom' },
 { data: 'prenoms', name: 'prenoms' },
-{ data: 'telephone', name: 'telephone' },
 { data: 'statut', name: 'statut' },
+{ data: 'telephone', name: 'telephone' },
+{ data: 'sexe', name: 'sexe' },
+{ data: 'date_naissance', name: 'date_naissance' },
+{ data: 'email', name: 'email' },
+{ data: 'adresse', name: 'adresse' },
+{ data: 'heure_rendez_vous', name: 'heure_rendez_vous' },
+{ data: 'destination', name: 'destination' },
+{ data: 'heure_voyage', name: 'heure_voyage' },
+{ data: 'message', name: 'message' },
+{ data: 'nom_complet', name: 'nom_complet' },
+{ data: 'resultat', name: 'resultat' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

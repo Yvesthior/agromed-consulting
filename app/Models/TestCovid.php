@@ -20,11 +20,16 @@ class TestCovid extends Model
         'Femme' => 'Femme',
     ];
 
+    public const RESULTAT_SELECT = [
+        'Non Rendu' => 'Non Rendu',
+        'Rendu'     => 'Rendu',
+    ];
+
     public const STATUT_SELECT = [
         'Effectue' => 'Effectué',
         'Reporte'  => 'Reporté',
         'Annule'   => 'Annulé',
-        'Programmé'  => 'Programmé',
+        'A venir'  => 'A venir',
     ];
 
     public $table = 'test_covids';
@@ -43,9 +48,9 @@ class TestCovid extends Model
         'date_voyage',
         'nom',
         'prenoms',
-        'nom_complet',
-        'sexe',
+        'statut',
         'telephone',
+        'sexe',
         'date_naissance',
         'email',
         'adresse',
@@ -53,7 +58,8 @@ class TestCovid extends Model
         'destination',
         'heure_voyage',
         'message',
-        'statut',
+        'nom_complet',
+        'resultat',
         'created_at',
         'updated_at',
         'deleted_at',

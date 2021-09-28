@@ -49,11 +49,39 @@ class TestCovidController extends Controller
             $table->editColumn('prenoms', function ($row) {
                 return $row->prenoms ? $row->prenoms : '';
             });
+            $table->editColumn('statut', function ($row) {
+                return $row->statut ? TestCovid::STATUT_SELECT[$row->statut] : '';
+            });
             $table->editColumn('telephone', function ($row) {
                 return $row->telephone ? $row->telephone : '';
             });
-            $table->editColumn('statut', function ($row) {
-                return $row->statut ? TestCovid::STATUT_SELECT[$row->statut] : '';
+            $table->editColumn('sexe', function ($row) {
+                return $row->sexe ? TestCovid::SEXE_RADIO[$row->sexe] : '';
+            });
+
+            $table->editColumn('email', function ($row) {
+                return $row->email ? $row->email : '';
+            });
+            $table->editColumn('adresse', function ($row) {
+                return $row->adresse ? $row->adresse : '';
+            });
+            $table->editColumn('heure_rendez_vous', function ($row) {
+                return $row->heure_rendez_vous ? $row->heure_rendez_vous : '';
+            });
+            $table->editColumn('destination', function ($row) {
+                return $row->destination ? $row->destination : '';
+            });
+            $table->editColumn('heure_voyage', function ($row) {
+                return $row->heure_voyage ? $row->heure_voyage : '';
+            });
+            $table->editColumn('message', function ($row) {
+                return $row->message ? $row->message : '';
+            });
+            $table->editColumn('nom_complet', function ($row) {
+                return $row->nom_complet ? $row->nom_complet : '';
+            });
+            $table->editColumn('resultat', function ($row) {
+                return $row->resultat ? TestCovid::RESULTAT_SELECT[$row->resultat] : '';
             });
 
             $table->rawColumns(['actions', 'placeholder']);

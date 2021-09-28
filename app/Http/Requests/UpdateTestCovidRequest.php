@@ -33,6 +33,9 @@ class UpdateTestCovidRequest extends FormRequest
                 'string',
                 'nullable',
             ],
+            'statut' => [
+                'required',
+            ],
             'telephone' => [
                 'required',
                 'integer',
@@ -53,9 +56,6 @@ class UpdateTestCovidRequest extends FormRequest
             ],
             'destination' => [
                 'string',
-                'required',
-            ],
-            'statut' => [
                 'required',
             ],
             'heure_voyage' => [

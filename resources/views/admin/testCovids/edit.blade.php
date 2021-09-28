@@ -44,13 +44,26 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.testCovid.fields.prenoms_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('nom_complet') ? 'has-error' : '' }}">
-                            <label for="nom_complet">{{ trans('cruds.testCovid.fields.nom_complet') }}</label>
-                            <input class="form-control" type="text" name="nom_complet" id="nom_complet" value="{{ old('nom_complet', $testCovid->nom_complet) }}">
-                            @if($errors->has('nom_complet'))
-                                <span class="help-block" role="alert">{{ $errors->first('nom_complet') }}</span>
+                        <div class="form-group {{ $errors->has('statut') ? 'has-error' : '' }}">
+                            <label class="required">{{ trans('cruds.testCovid.fields.statut') }}</label>
+                            <select class="form-control" name="statut" id="statut" required>
+                                <option value disabled {{ old('statut', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                                @foreach(App\Models\TestCovid::STATUT_SELECT as $key => $label)
+                                    <option value="{{ $key }}" {{ old('statut', $testCovid->statut) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('statut'))
+                                <span class="help-block" role="alert">{{ $errors->first('statut') }}</span>
                             @endif
-                            <span class="help-block">{{ trans('cruds.testCovid.fields.nom_complet_helper') }}</span>
+                            <span class="help-block">{{ trans('cruds.testCovid.fields.statut_helper') }}</span>
+                        </div>
+                        <div class="form-group {{ $errors->has('telephone') ? 'has-error' : '' }}">
+                            <label class="required" for="telephone">{{ trans('cruds.testCovid.fields.telephone') }}</label>
+                            <input class="form-control" type="number" name="telephone" id="telephone" value="{{ old('telephone', $testCovid->telephone) }}" step="1" required>
+                            @if($errors->has('telephone'))
+                                <span class="help-block" role="alert">{{ $errors->first('telephone') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.testCovid.fields.telephone_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('sexe') ? 'has-error' : '' }}">
                             <label>{{ trans('cruds.testCovid.fields.sexe') }}</label>
@@ -64,14 +77,6 @@
                                 <span class="help-block" role="alert">{{ $errors->first('sexe') }}</span>
                             @endif
                             <span class="help-block">{{ trans('cruds.testCovid.fields.sexe_helper') }}</span>
-                        </div>
-                        <div class="form-group {{ $errors->has('telephone') ? 'has-error' : '' }}">
-                            <label class="required" for="telephone">{{ trans('cruds.testCovid.fields.telephone') }}</label>
-                            <input class="form-control" type="number" name="telephone" id="telephone" value="{{ old('telephone', $testCovid->telephone) }}" step="1" required>
-                            @if($errors->has('telephone'))
-                                <span class="help-block" role="alert">{{ $errors->first('telephone') }}</span>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.testCovid.fields.telephone_helper') }}</span>
                         </div>
                         <div class="form-group {{ $errors->has('date_naissance') ? 'has-error' : '' }}">
                             <label class="required" for="date_naissance">{{ trans('cruds.testCovid.fields.date_naissance') }}</label>
@@ -129,18 +134,26 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.testCovid.fields.message_helper') }}</span>
                         </div>
-                        <div class="form-group {{ $errors->has('statut') ? 'has-error' : '' }}">
-                            <label class="required">{{ trans('cruds.testCovid.fields.statut') }}</label>
-                            <select class="form-control" name="statut" id="statut" required>
-                                <option value disabled {{ old('statut', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                                @foreach(App\Models\TestCovid::STATUT_SELECT as $key => $label)
-                                    <option value="{{ $key }}" {{ old('statut', $testCovid->statut) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                        <div class="form-group {{ $errors->has('nom_complet') ? 'has-error' : '' }}">
+                            <label for="nom_complet">{{ trans('cruds.testCovid.fields.nom_complet') }}</label>
+                            <input class="form-control" type="text" name="nom_complet" id="nom_complet" value="{{ old('nom_complet', $testCovid->nom_complet) }}">
+                            @if($errors->has('nom_complet'))
+                                <span class="help-block" role="alert">{{ $errors->first('nom_complet') }}</span>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.testCovid.fields.nom_complet_helper') }}</span>
+                        </div>
+                        <div class="form-group {{ $errors->has('resultat') ? 'has-error' : '' }}">
+                            <label>{{ trans('cruds.testCovid.fields.resultat') }}</label>
+                            <select class="form-control" name="resultat" id="resultat">
+                                <option value disabled {{ old('resultat', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                                @foreach(App\Models\TestCovid::RESULTAT_SELECT as $key => $label)
+                                    <option value="{{ $key }}" {{ old('resultat', $testCovid->resultat) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                                 @endforeach
                             </select>
-                            @if($errors->has('statut'))
-                                <span class="help-block" role="alert">{{ $errors->first('statut') }}</span>
+                            @if($errors->has('resultat'))
+                                <span class="help-block" role="alert">{{ $errors->first('resultat') }}</span>
                             @endif
-                            <span class="help-block">{{ trans('cruds.testCovid.fields.statut_helper') }}</span>
+                            <span class="help-block">{{ trans('cruds.testCovid.fields.resultat_helper') }}</span>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-danger" type="submit">

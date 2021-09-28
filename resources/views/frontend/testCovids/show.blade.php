@@ -60,18 +60,10 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.testCovid.fields.nom_complet') }}
+                                        {{ trans('cruds.testCovid.fields.statut') }}
                                     </th>
                                     <td>
-                                        {{ $testCovid->nom_complet }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>
-                                        {{ trans('cruds.testCovid.fields.sexe') }}
-                                    </th>
-                                    <td>
-                                        {{ App\Models\TestCovid::SEXE_RADIO[$testCovid->sexe] ?? '' }}
+                                        {{ App\Models\TestCovid::STATUT_SELECT[$testCovid->statut] ?? '' }}
                                     </td>
                                 </tr>
                                 <tr>
@@ -80,6 +72,14 @@
                                     </th>
                                     <td>
                                         {{ $testCovid->telephone }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.sexe') }}
+                                    </th>
+                                    <td>
+                                        {{ App\Models\TestCovid::SEXE_RADIO[$testCovid->sexe] ?? '' }}
                                     </td>
                                 </tr>
                                 <tr>
@@ -140,10 +140,18 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.testCovid.fields.statut') }}
+                                        {{ trans('cruds.testCovid.fields.nom_complet') }}
                                     </th>
                                     <td>
-                                        {{ App\Models\TestCovid::STATUT_SELECT[$testCovid->statut] ?? '' }}
+                                        {{ $testCovid->nom_complet }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        {{ trans('cruds.testCovid.fields.resultat') }}
+                                    </th>
+                                    <td>
+                                        {{ App\Models\TestCovid::RESULTAT_SELECT[$testCovid->resultat] ?? '' }}
                                     </td>
                                 </tr>
                             </tbody>

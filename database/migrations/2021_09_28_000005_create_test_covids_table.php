@@ -14,9 +14,9 @@ class CreateTestCovidsTable extends Migration
             $table->date('date_voyage');
             $table->string('nom');
             $table->string('prenoms')->nullable();
-            $table->string('nom_complet')->nullable();
-            $table->string('sexe')->nullable();
+            $table->string('statut');
             $table->integer('telephone');
+            $table->string('sexe')->nullable();
             $table->date('date_naissance');
             $table->string('email')->nullable();
             $table->string('adresse')->nullable();
@@ -24,7 +24,8 @@ class CreateTestCovidsTable extends Migration
             $table->string('destination');
             $table->time('heure_voyage')->nullable();
             $table->longText('message')->nullable();
-            $table->string('statut');
+            $table->string('nom_complet')->nullable();
+            $table->string('resultat')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

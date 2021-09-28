@@ -117,6 +117,8 @@ return [
             'heure_voyage_helper'      => ' ',
             'nom_complet'              => 'Nom Complet',
             'nom_complet_helper'       => ' ',
+            'resultat'                 => 'Résultat',
+            'resultat_helper'          => ' ',
         ],
     ],
     'auditLog' => [
