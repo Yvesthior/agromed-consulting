@@ -35,11 +35,7 @@
     {{-- @yield('scripts') --}}
     
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    
-    
-    
-    
-    
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -229,7 +225,7 @@ lundi au dimanche:<br>&nbsp;De 08&nbsp;: 00 à 22&nbsp;: 00
     </section>
     <section class="u-clearfix u-image u-shading u-section-4" src="" data-image-width="1280" data-image-height="854" id="sec-b552">
         <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-          <a href="{{ route('rendez-vous') }}" class="u-border-none u-btn u-btn-round u-button-style u-hover-custom-color-2 u-palette-1-base u-radius-50 u-btn-1" data-animation-name="rubberBand" data-animation-duration="1500" data-animation-delay="0" data-animation-direction="">Je Prends rendez-vous</a><span class="u-hidden-xs u-icon u-icon-circle u-icon-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Left"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 490.667 490.667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e342"></use></svg><svg class="u-svg-content" viewBox="0 0 490.667 490.667" x="0px" y="0px" id="svg-e342" style="enable-background:new 0 0 490.667 490.667;"><path style="fill:#009688;" d="M245.333,0C109.839,0,0,109.839,0,245.333s109.839,245.333,245.333,245.333  s245.333-109.839,245.333-245.333C490.514,109.903,380.764,0.153,245.333,0z"></path><path style="fill:#FAFAFA;" d="M290.133,104.533c-19.139-18.289-49.277-18.289-68.416,0c-18.893,18.881-18.902,49.503-0.021,68.395  c0.007,0.007,0.014,0.014,0.021,0.021l19.2,19.2H117.333C87.878,192.149,64,216.027,64,245.483  c0,29.455,23.878,53.333,53.333,53.333h123.584l-19.2,19.2c-17.522,20.175-15.371,50.734,4.804,68.257  c18.259,15.858,45.423,15.799,63.612-0.139l118.251-118.251c12.492-12.496,12.492-32.752,0-45.248L290.133,104.533z"></path></svg></span>
+          <a href="{{ route('rendez-vous') }}" class="u-border-none u-btn u-btn-round u-button-style u-hover-custom-color-2 u-palette-1-base u-radius-50 u-btn-1">Je Prends rendez-vous</a><span class="u-hidden-xs u-icon u-icon-circle u-icon-1" data-animation-name="slideIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Left"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 490.667 490.667" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e342"></use></svg><svg class="u-svg-content" viewBox="0 0 490.667 490.667" x="0px" y="0px" id="svg-e342" style="enable-background:new 0 0 490.667 490.667;"><path style="fill:#009688;" d="M245.333,0C109.839,0,0,109.839,0,245.333s109.839,245.333,245.333,245.333  s245.333-109.839,245.333-245.333C490.514,109.903,380.764,0.153,245.333,0z"></path><path style="fill:#FAFAFA;" d="M290.133,104.533c-19.139-18.289-49.277-18.289-68.416,0c-18.893,18.881-18.902,49.503-0.021,68.395  c0.007,0.007,0.014,0.014,0.021,0.021l19.2,19.2H117.333C87.878,192.149,64,216.027,64,245.483  c0,29.455,23.878,53.333,53.333,53.333h123.584l-19.2,19.2c-17.522,20.175-15.371,50.734,4.804,68.257  c18.259,15.858,45.423,15.799,63.612-0.139l118.251-118.251c12.492-12.496,12.492-32.752,0-45.248L290.133,104.533z"></path></svg></span>
         </div>
       </section>
     
